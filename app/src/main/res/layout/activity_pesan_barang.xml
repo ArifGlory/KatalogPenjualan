@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".PesanBarangActivity"
+    >
+
+    <ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        tools:context="glory.katalogpenjualan.PesanBarangActivity"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scrool"
+        android:background="#FAFAFA">
+
+
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/rela0"
+            >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/rela1">
+
+
+                <include
+                    android:id="@+id/toolbar"
+                    layout="@layout/layout_toolbar"/>
+
+
+
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_dashboard_black_48dp"
+                    android:onClick="Katalog"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="120dp"
+                    android:layout_centerInParent="true"
+                    />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_shopping_cart_black_48dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="10dp"
+                    android:layout_centerInParent="true"
+                    android:onClick="shopKlik"
+                    />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_menu_black_48dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_centerInParent="true"
+                    android:onClick="drawerKlik"
+                    />
+
+
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pesan Barang"
+                android:layout_below="@+id/rela1"
+                android:textColor="#FF0000"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:textSize="20sp"
+                android:textAppearance="?attr/textAppearanceListItem"
+                android:id="@+id/txtjudul"
+                />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtjudulid"
+                android:layout_below="@+id/txtjudul"
+                android:text="ID Outlet "
+                android:textColor="#FF0000"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="40dp"
+                />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/rela2"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_below="@+id/txtjudulid"
+                >
+
+
+
+                <AutoCompleteTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/etIdOutlet"
+                    android:textColor="#FF0000"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/txtjudulnamaOutlet"
+                    android:layout_below="@+id/etIdOutlet"
+                    android:text="Nama Outlet "
+                    android:textColor="#FF0000"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:layout_marginTop="10dp"
+                    />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/etnamaOutlet"
+                    android:layout_below="@+id/txtjudulnamaOutlet"
+                    android:textColor="#FF0000"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/txtjudulalamatOutlet"
+                    android:layout_below="@+id/etnamaOutlet"
+                    android:text="Alamat "
+                    android:textColor="#FF0000"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:layout_marginTop="10dp"
+                    />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/etalamatOutlet"
+                    android:layout_below="@+id/txtjudulalamatOutlet"
+                    android:textColor="#FF0000"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/txtjudultelponOutlet"
+                    android:layout_below="@+id/etalamatOutlet"
+                    android:text="No Telpon "
+                    android:textColor="#FF0000"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:layout_marginTop="10dp"
+                    />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/ettelponOutlet"
+                    android:layout_below="@+id/txtjudultelponOutlet"
+                    android:textColor="#FF0000"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/txtjudultanggalOutlet"
+                    android:layout_below="@+id/ettelponOutlet"
+                    android:text="Tanggal"
+                    android:textColor="#FF0000"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:layout_marginTop="10dp"
+                    />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/ettanggalOutlet"
+                    android:layout_below="@+id/txtjudultanggalOutlet"
+                    android:textColor="#FF0000"
+                    android:enabled="false"
+                    />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Proses ke pemilihan barang"
+                    android:id="@+id/btnProses"
+                    android:layout_below="@+id/ettanggalOutlet"
+                    android:onClick="klikProsesPemilihan"
+                    />
+
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+    </ScrollView>
+
+    <android.support.design.widget.NavigationView
+        android:id="@+id/navigation_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:headerLayout="@layout/layout_header"
+        app:menu="@menu/item_navigasi" />
+</android.support.v4.widget.DrawerLayout>

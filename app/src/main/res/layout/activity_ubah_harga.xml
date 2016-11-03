@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.v4.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".UbahHargaActivity"
+    >
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="glory.katalogpenjualan.UbahHargaActivity"
+        android:background="#FAFAFA">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/rela0">
+
+
+            <include
+                android:id="@+id/toolbar"
+                layout="@layout/layout_toolbar"/>
+
+
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_dashboard_black_48dp"
+                android:onClick="Katalog"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="120dp"
+                android:layout_centerInParent="true"
+                />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_shopping_cart_black_48dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                android:layout_centerInParent="true"
+                android:onClick="shopKlik"
+                />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_menu_black_48dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="10dp"
+                android:layout_centerInParent="true"
+                android:onClick="drawerKlik"
+                />
+
+
+
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ubah Harga"
+            android:layout_below="@+id/rela0"
+            android:textColor="#FF0000"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:textSize="20sp"
+            android:textAppearance="?attr/textAppearanceListItem"
+            android:id="@+id/txtjudul"
+            />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtjudulnb"
+            android:layout_below="@+id/txtjudul"
+            android:text="Nama Barang "
+            android:textColor="#FF0000"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="40dp"
+            />
+
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/rela1"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_below="@+id/txtjudulnb"
+            >
+
+            <AutoCompleteTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/etaubarang"
+                android:textColor="#FF0000"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtjudulhl"
+                android:text="Harga lama"
+                android:textColor="#FF0000"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/etaubarang"
+                />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/etHargalama"
+                android:layout_below="@+id/txtjudulhl"
+                android:enabled="false"
+                android:textColor="#FF0000"
+                />
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtjudulhb"
+                android:layout_below="@+id/etHargalama"
+                android:text="Harga Baru"
+                android:textColor="#FF0000"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:layout_marginTop="30dp"
+                />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/etHargabaru"
+                android:layout_below="@+id/txtjudulhb"
+                android:enabled="true"
+                android:textColor="#FF0000"
+                />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/btnUbahHarga"
+                android:layout_below="@+id/etHargabaru"
+                android:layout_marginTop="30dp"
+                android:text="Ubah Harga"
+                android:onClick="ubahharga"
+                />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/btnBatalHarga"
+                android:layout_below="@+id/btnUbahHarga"
+                android:layout_marginTop="10dp"
+                android:text="Batal"
+                android:onClick="batal"
+                />
+
+        </RelativeLayout>
+
+
+
+    </RelativeLayout>
+    <android.support.design.widget.NavigationView
+        android:id="@+id/navigation_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:headerLayout="@layout/layout_header"
+        app:menu="@menu/item_navigasi" />
+</android.support.v4.widget.DrawerLayout>

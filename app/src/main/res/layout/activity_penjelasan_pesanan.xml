@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.v4.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".PenjelasanPesananActivity"
+    >
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="glory.katalogpenjualan.PenjelasanPesananActivity"
+    android:background="@drawable/back3"/>
+
+    <RelativeLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/rela0"
+
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/rela1">
+
+
+            <include
+                android:id="@+id/toolbar"
+                layout="@layout/layout_toolbar"/>
+
+
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_dashboard_black_48dp"
+                android:onClick="Katalog"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="120dp"
+                android:layout_centerInParent="true"
+                />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_shopping_cart_black_48dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                android:layout_centerInParent="true"
+                android:onClick="shopKlik"
+                />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_menu_black_48dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="10dp"
+                android:layout_centerInParent="true"
+                android:onClick="drawerKlik"
+                />
+
+
+
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Laporan Pesanan"
+            android:textColor="#FAFAFA"
+            android:textStyle="bold"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:textSize="20sp"
+            android:id="@+id/txtjudulKatal"
+            android:layout_below="@+id/rela1"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="10dp"
+            android:text="ID "
+            android:textColor="#FAFAFA"
+            android:layout_marginTop="20dp"
+            android:textSize="18sp"
+            android:id="@+id/txtjudulID"
+            android:layout_below="@+id/txtjudulKatal"
+            android:textStyle="bold"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="15dp"
+            android:text="Id Outlet"
+            android:textColor="#FAFAFA"
+            android:textSize="16sp"
+            android:id="@+id/txtpenjelID"
+            android:layout_below="@+id/txtjudulID"
+            android:textStyle="italic"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="10dp"
+            android:text="Nama "
+            android:textColor="#FAFAFA"
+            android:layout_marginTop="5dp"
+            android:textSize="18sp"
+            android:id="@+id/txtjudulNama"
+            android:layout_below="@+id/txtpenjelID"
+            android:textStyle="bold"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="15dp"
+            android:text="Nama outlet"
+            android:textColor="#FAFAFA"
+            android:textSize="16sp"
+            android:id="@+id/txtpenjelNama"
+            android:layout_below="@+id/txtjudulNama"
+            android:textStyle="italic"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="10dp"
+            android:text="Alamat"
+            android:textColor="#FAFAFA"
+            android:layout_marginTop="5dp"
+            android:textSize="18sp"
+            android:id="@+id/txtjudulAlamat"
+            android:layout_below="@+id/txtpenjelNama"
+            android:textStyle="bold"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="15dp"
+            android:text="alamat Outlet"
+            android:textColor="#FAFAFA"
+            android:textSize="16sp"
+            android:id="@+id/txtpenjelAlamat"
+            android:layout_below="@+id/txtjudulAlamat"
+            android:textStyle="italic"
+            />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="10dp"
+            android:text="No Telpon"
+            android:textColor="#FAFAFA"
+            android:layout_marginTop="5dp"
+            android:textSize="18sp"
+            android:id="@+id/txtjudulTelpon"
+            android:layout_below="@+id/txtpenjelAlamat"
+            android:textStyle="bold"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="15dp"
+            android:text="No Telpon outlet"
+            android:textColor="#FAFAFA"
+            android:textSize="16sp"
+            android:id="@+id/txtpenjelTelpon"
+            android:layout_below="@+id/txtjudulTelpon"
+            android:textStyle="italic"
+            />
+
+        <ListView
+            android:id="@+id/listView1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtJumlahTotal"
+            >
+        </ListView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtJumlahTotal"
+            android:layout_below="@+id/txtpenjelTelpon"
+            android:text="Total"
+            android:layout_centerHorizontal="true"
+            android:textStyle="bold"
+            android:textSize="17sp"
+            />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kirim"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="15dp"
+            android:layout_marginRight="15dp"
+            android:drawableRight="@android:drawable/ic_menu_send"
+            android:onClick="klikKirimFirebase"
+
+            />
+
+
+
+
+</RelativeLayout>
+    <android.support.design.widget.NavigationView
+        android:id="@+id/navigation_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:headerLayout="@layout/layout_header"
+        app:menu="@menu/item_navigasi" />
+    </android.support.v4.widget.DrawerLayout>

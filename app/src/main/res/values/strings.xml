@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Katalog Penjualan</string>
+    <string name="openDrawer">Drawer dibuka</string>
+    <string name="closeDrawer">Drawer ditutup</string>
+</resources>
