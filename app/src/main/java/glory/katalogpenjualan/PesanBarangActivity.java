@@ -32,6 +32,7 @@ public class PesanBarangActivity extends AppCompatActivity {
     private NavigationView navigationView;
     private Intent i;
 
+    String tanggal;
     String[] id,nama,nope,alamat;
     DataHelper dbcenter;
     AutoCompleteTextView textAutoComplete;
@@ -83,8 +84,9 @@ public class PesanBarangActivity extends AppCompatActivity {
 
                 }
                 Calendar calendar = Calendar.getInstance();
-                SimpleDateFormat simpleDateFormat = new SimpleDateFormat("d/m/yyyy");
-                tanggal_txt.setText(simpleDateFormat.format(calendar.getTime()));
+                int bulan = calendar.get(Calendar.MONTH)+1;
+                tanggal = ""+calendar.get(Calendar.DATE)+" - "+bulan+" - "+calendar.get(Calendar.YEAR);
+                tanggal_txt.setText(""+calendar.get(Calendar.DATE)+" - "+bulan+" - "+calendar.get(Calendar.YEAR));
             }
         });
 
@@ -193,6 +195,8 @@ public class PesanBarangActivity extends AppCompatActivity {
     public void klikProsesPemilihan(View view) {
         i = new Intent(getApplicationContext(),PemilihanBarangActivity.class);
         i.putExtra("idKirim",textAutoComplete.getText().toString());
+        i.putExtra("tglKirim",tanggal.toString());
+
         startActivity(i);
 
     }

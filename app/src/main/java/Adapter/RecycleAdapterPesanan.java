@@ -33,7 +33,7 @@ public class RecycleAdapterPesanan extends RecyclerView.Adapter<RecycleViewHolde
     protected Cursor cursor;
 
     //dekalrasi buat List nya
-    String[] id,nama,nope,alamat;//={"Outlet 1 ","Outlet 2","Outlet 3"};
+    String[] id,nama,nope,alamat,tanggal;//={"Outlet 1 ","Outlet 2","Outlet 3"};
 
     int[]icon = {R.drawable.greencircle,R.drawable.greencircle,R.drawable.greencircle,R.drawable.greencircle,R.drawable.greencircle,
             R.drawable.greencircle,R.drawable.greencircle};
@@ -49,6 +49,7 @@ public class RecycleAdapterPesanan extends RecyclerView.Adapter<RecycleViewHolde
         nama = new String[cursor.getCount()];
         nope = new String[cursor.getCount()];
         alamat = new String[cursor.getCount()];
+  //      tanggal = new String[cursor.getCount()];
 
         cursor.moveToFirst();
 
@@ -58,6 +59,7 @@ public class RecycleAdapterPesanan extends RecyclerView.Adapter<RecycleViewHolde
             nama[cc] = cursor.getString(1).toString();
             nope[cc] = cursor.getString(2).toString();
             alamat[cc] = cursor.getString(3).toString();
+//            tanggal[cc] = cursor.getString(4).toString();
         }
         this.context = context;
         inflater = LayoutInflater.from(context);
@@ -101,6 +103,7 @@ public class RecycleAdapterPesanan extends RecyclerView.Adapter<RecycleViewHolde
             i.putExtra("nama",nama[position].toString());
             i.putExtra("nope",nope[position].toString());
             i.putExtra("alamat",alamat[position].toString());
+         //   i.putExtra("tanggal", tanggal[position].toString());
             context.startActivity(i);
         }
     };

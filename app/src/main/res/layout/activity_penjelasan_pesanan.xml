@@ -208,6 +208,35 @@
             android:textStyle="italic"
             />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="10dp"
+            android:text="Tanggal"
+            android:textColor="#FAFAFA"
+            android:layout_marginTop="5dp"
+            android:textSize="18sp"
+            android:id="@+id/txtjudulTanggal"
+            android:layout_below="@+id/txtpenjelTelpon"
+            android:textStyle="bold"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="15dp"
+            android:text="Tanggal outlet"
+            android:textColor="#FAFAFA"
+            android:textSize="16sp"
+            android:id="@+id/txtpenjelTanggal"
+            android:layout_below="@+id/txtjudulTanggal"
+            android:textStyle="italic"
+            />
+
         <ListView
             android:id="@+id/listView1"
             android:layout_width="match_parent"
@@ -220,7 +249,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/txtJumlahTotal"
-            android:layout_below="@+id/txtpenjelTelpon"
+            android:layout_below="@+id/txtpenjelTanggal"
             android:text="Total"
             android:layout_centerHorizontal="true"
             android:textStyle="bold"

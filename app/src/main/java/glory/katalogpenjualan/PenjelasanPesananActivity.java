@@ -34,7 +34,7 @@ import Adapter.DataHelper;
 
 public class PenjelasanPesananActivity extends AppCompatActivity {
 
-    TextView txtid,txtnama,txtnope,txtalamat;
+    TextView txtid,txtnama,txtnope,txtalamat,txtTanggal;
 
     String[] isi;
     String[] listArray={"Asus","Acer","Apple","Samsung","Thoshiba","Sony","Xiomi","Motorola"};
@@ -48,7 +48,7 @@ public class PenjelasanPesananActivity extends AppCompatActivity {
     private NavigationView navigationView;
     Intent i;
     private DatabaseReference root;
-    private String temp_namaOutlet;
+    private String temp_namaOutlet,tanggal;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,10 +62,13 @@ public class PenjelasanPesananActivity extends AppCompatActivity {
         txtnama = (TextView) findViewById(R.id.txtpenjelNama);
         txtnope = (TextView) findViewById(R.id.txtpenjelTelpon);
         txtalamat = (TextView) findViewById(R.id.txtpenjelAlamat);
+        txtTanggal = (TextView) findViewById(R.id.txtpenjelTanggal);
         txtid.setText(getIntent().getExtras().get("id").toString());
         txtnama.setText(getIntent().getExtras().get("nama").toString());
         txtnope.setText(getIntent().getExtras().get("nope").toString());
         txtalamat.setText(getIntent().getExtras().get("alamat").toString());
+       //
+
 
         dbcenter = new DataHelper(this);
         SQLiteDatabase db = dbcenter.getReadableDatabase();
@@ -75,6 +78,8 @@ public class PenjelasanPesananActivity extends AppCompatActivity {
         cursor.moveToFirst();
         for (int cc=0; cc < cursor.getCount(); cc++){
             cursor.moveToPosition(cc);
+            tanggal = cursor.getString(5).toString();
+            txtTanggal.setText(tanggal);
             isi[cc] =cursor.getString(2).toString()+"       "+cursor.getString(3).toString()+"      "+cursor.getString(4).toString();
             jumlahSemua = jumlahSemua + Integer.parseInt(cursor.getString(4).toString());
         }
@@ -241,10 +246,21 @@ public class PenjelasanPesananActivity extends AppCompatActivity {
                         map2.put("nope", txtnope.getText().toString());
                         map2.put("alamat", txtalamat.getText().toString());
                         map2.put("totalBayar", txtTotalsemua.getText().toString());
-                        for (int a=0;a<isi.length;a++){
-                            map2.put("list"+a,isi[a].toString());
-                        }
+                        map2.put("tanggal", tanggal.toString());
+                        map2.put("zlist", null);
+
                         namaOutlet_root.updateChildren(map2);
+////////////////////////////////////////////////////////////////////////
+
+
+                        DatabaseReference listBarang_root = namaOutlet_root.child("zlist");
+
+                        Map<String, Object> map4 = new HashMap<String, Object>();
+                        for (int a=0;a<isi.length;a++){
+                            map4.put("list"+a,isi[a].toString());
+                        }
+                        listBarang_root.updateChildren(map4);
+
 
 
                     }

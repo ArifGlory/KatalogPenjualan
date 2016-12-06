@@ -43,11 +43,11 @@ public class DataHelper extends SQLiteOpenHelper {
         }
         //db.execSQL(sql2);
 
-        String sql3 = "create table data_penjualan (id_barang char,id_outlet char, nama_barang varchar null, jumlah integer null, total integer null);";
+        String sql3 = "create table data_penjualan (id_barang char,id_outlet char, nama_barang varchar null, jumlah integer null, total integer null,tanggal varchar null);";
         Log.d("Data", "onCreate: " + sql3);
         db.execSQL(sql3);
         String sql31;
-        sql3 = "INSERT INTO data_penjualan(id_barang,id_outlet, nama_barang,jumlah,total) VALUES ('1002','1002', 'Ades', '5','65000');";
+        sql3 = "INSERT INTO data_penjualan(id_barang,id_outlet, nama_barang,jumlah,total,tanggal) VALUES ('1002','1002', 'Ades', '5','65000','30 - 11 - 2016');";
         db.execSQL(sql3);
         //db.execSQL(sql31);
 

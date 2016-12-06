@@ -21,7 +21,7 @@ import Adapter.RecycleAdapter;
 public class PemilihanBarangActivity extends AppCompatActivity {
 
     RecyclerView recyclerView;
-    String idTerima;
+    String idTerima,tanggal_terima;
 
     protected Cursor cursor;
     DataHelper dbHelper;
@@ -31,6 +31,7 @@ public class PemilihanBarangActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pemilihan_barang);
         idTerima = getIntent().getExtras().get("idKirim").toString();
+        tanggal_terima = getIntent().getExtras().get("tglKirim").toString();
         Toast.makeText(getApplicationContext(), "" + idTerima, Toast.LENGTH_SHORT).show();
         dbHelper = new DataHelper(this);
       //  adapterBarang  = new RecycleAdapter(getApplicationContext());
@@ -67,12 +68,12 @@ public class PemilihanBarangActivity extends AppCompatActivity {
                                 Toast.makeText(getApplicationContext(), "" + RecycleAdapter.arrTotal[a], Toast.LENGTH_SHORT).show();
 
                                 SQLiteDatabase db = dbHelper.getWritableDatabase();
-                                db.execSQL("INSERT INTO data_penjualan(id_barang, id_outlet,nama_barang, jumlah,total) VALUES('" +
+                                db.execSQL("INSERT INTO data_penjualan(id_barang, id_outlet,nama_barang, jumlah,total,tanggal) VALUES('" +
                                         RecycleAdapter.arrId[a] + "','" +
                                         idTerima + "','" +
                                         RecycleAdapter.arrNama[a] + "','" +
                                         RecycleAdapter.arrJumlah[a] + "','" +
-                                        RecycleAdapter.arrTotal[a] + "');");
+                                        RecycleAdapter.arrTotal[a]+"','" +tanggal_terima+ "');");
                                 Toast.makeText(getApplicationContext(), "Berhasil disimpan ", Toast.LENGTH_LONG).show();
 
                                 finish();
